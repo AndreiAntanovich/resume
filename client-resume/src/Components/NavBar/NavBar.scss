@@ -1,0 +1,173 @@
+.navbar {
+    width: 100hv;
+    background-color: rgb(51, 51, 51);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .navbar-container{
+        padding: 0 10px;
+        width: 996px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+            .navbar-name{
+                display: inline-block;
+                color:white;
+                animation-name: first-show;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+        }
+        .item-navbar{
+            animation-name: first-show-item;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+            font-weight: low;
+            margin: 0 15px;
+        }
+        .navbar-sign{
+            animation-name: first-show;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            .navbar-signup{
+                transition: all 0.5s;
+                margin-left: 10px;
+                border: 1px solid white;
+                border-radius: 5px;
+                padding: 5px;
+                &:hover{
+                    background-color: white;
+                    color:rgb(51, 51, 51);
+                    transition: all 0.5s;                
+                }
+            }
+        }
+    
+    }
+}
+
+
+
+@media screen and (max-width:576px) {
+    .navbar {
+        z-index: 1;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        .navbar-container{
+            padding: 0 10px;
+            width: 996px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            transition: all 2s;
+            &.active{
+                background-color: black;
+                transition: all 2s;
+            }
+            .navbar-name{
+                order: 2;
+                display: inline-block;
+                color:white;
+                animation-name: first-show;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+            }
+            .item-navbar-container{
+                display: none;
+            }
+            .icon-container_mb{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                order: 1;
+                width: 48px;
+                height: 48px;
+                .icon-container_mb_1{
+                    display: block;
+                    height: 0.8px;
+                    width: 33%;
+                    background-color: #fff;;
+                    margin-bottom: 8px;
+                    animation-name: animation-bm_start_1;
+                    animation-duration: 1s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode:forwards;
+
+                    &.active{
+                        animation-name: animation-bm_1;
+                        animation-duration: 1s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode:forwards;
+                    }
+                }
+                .icon-container_mb_2{
+                    display: block;
+                    height: 0.8px;
+                    width: 33%;
+                    background-color: #fff;
+                    animation-name: animation-bm_start_2;
+                    animation-duration: 1s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode:forwards;
+
+                    &.active{
+                        animation-name: animation-bm_2;
+                        animation-duration: 1s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode:forwards;
+                    }
+                }
+            }
+            .navbar-sign{
+                order: 3;
+
+        }
+    }
+}
+}
+
+
+@keyframes first-show {
+    0%
+    {transform: translateY(-50px);}
+    100%
+    {transform: translateY(0px);}
+}
+@keyframes first-show-item {
+    0%
+    {opacity: 0;}
+    70%
+    {color:white}
+    100%
+    {color:rgb(194, 194, 194)}
+}
+@keyframes animation-bm_1 {
+    50%
+    {transform:  translateY(4px)}
+    100%
+    {transform:  translateX(0px) translateY(5px) rotate(45deg)}
+}
+@keyframes animation-bm_2 {
+    50%
+    {transform: translateY(-5px) ;}
+    100%
+    {transform: translateX(0px) translateY(-4px)  rotate(-45deg);}
+}
+@keyframes animation-bm_start_1 {
+    50%
+    {transform:  translateY(4px)}
+    0%
+    {transform:  translateX(0px) translateY(5px) rotate(45deg)}
+}
+@keyframes animation-bm_start_2 {
+    50%
+    {transform: translateY(-5px) ;}
+    0%
+    {transform: translateX(0px) translateY(-4px)  rotate(-45deg);}
+}
+
+
+

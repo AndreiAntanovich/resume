@@ -1,0 +1,38 @@
+.item-navbar-container_mb{
+    z-index:-5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    // top:-100%;
+    left:0px;
+
+    .item-navbar_mb{
+        font-size: 30px;
+        font-weight: 100;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    }
+
+    .show_items_mb-enter{
+        top:-100%;
+    }
+    .show_items_mb-enter-active{
+        top:44px;
+        transition: top 1000ms;
+    }
+    .show_items_mb-enter-done{
+        top:44px;
+    }
+    .show_items_mb-exit{
+        top:44px;
+    }
+    .show_items_mb-exit-active{
+        top:-100%;
+        transition: top 1000ms;
+    }
+    

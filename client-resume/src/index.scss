@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+body {
+  margin: 0;
+  font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 12px;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: -.01em;
+}
+
+.link{
+  transition: all 0.5s;
+  &:link,&:active,&:checked,&:visited{
+    color:rgb(194, 194, 194);
+    text-decoration: none;
+    transition: all 0.5s;
+    &:hover{
+      transition: all 0.5s;
+      color:white;
+  }
+
+}
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

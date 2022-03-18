@@ -1,12 +1,20 @@
 import React from 'react';
 import './App.css';
-import HomePage from './Components/HomePage';
+import HomePage from './Components/HomePage/HomePage';
+import NavBar from './Components/NavBar/NavBar';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 
-const App: React.FunctionComponent = () =>{
+
+const App: React.FunctionComponent = () => {
   return (
-    <div className="container-Components">
-      <HomePage/>
-    </div>
+    <BrowserRouter>
+      <div className='container-navbar'>
+        <NavBar/>
+      </div>
+      <div className="container-Components">
+        <HomePage />
+      </div>
+    </BrowserRouter>
   );
 }
 
