@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
-import HomePage from './Components/HomePage/HomePage';
+import Skills from './Components/Skills/Skills';
 import NavBar from './Components/NavBar/NavBar';
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
+import WelcomePage from './Components/HomePage/WelcomePage';
 
 
 const App: React.FunctionComponent = () => {
   return (
     <BrowserRouter>
       <div className='container-navbar'>
-        <NavBar/>
+        <NavBar />
       </div>
       <div className="container-Components">
-        <HomePage />
+        <Routes>
+          <Route path='/' element={<WelcomePage />}></Route>
+          <Route path='/skills' element={<Skills/>}></Route>
+        </Routes>
       </div>
     </BrowserRouter>
   );

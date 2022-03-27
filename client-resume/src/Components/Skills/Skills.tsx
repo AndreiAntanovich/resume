@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import './HomePage.scss';
+import './Skills.scss';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
-const  HomePage:React.FunctionComponent = () =>{
+const  Skills:React.FunctionComponent = () =>{
     const count = useAppSelector((state) => state.counter.value)
     const dispatch = useAppDispatch()  
 
@@ -13,4 +13,4 @@ const  HomePage:React.FunctionComponent = () =>{
   );
 }
 
-export default HomePage;
+export default Skills;

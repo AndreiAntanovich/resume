@@ -1,4 +1,17 @@
+//mixins
+@mixin animation-cursor-pounter_text(){
+    content: "|";
+    animation: flash 0.3s none infinite alternate;
+}
+//mixins
+
 .navbar {
+    //variable
+    --show-after:hidden;
+    --show-before:visible;
+    --show-text:hidden;
+    //variable
+
     width: 100hv;
     background-color: rgb(51, 51, 51);
     height: 44px;
@@ -13,23 +26,26 @@
         align-items: center;
         justify-content: space-between;
             .navbar-name{
-                display: inline-block;
-                color:white;
-                animation-name: first-show;
-                animation-duration: 1s;
-                animation-iteration-count: 1;
+                width: 70px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .navbar-name-text{
+                    margin: 0;
+                    visibility: var(--show-text);
+                    text-align: left;
+                    display: inline;
+                    color:white;    
+                }
+        }
+        i{
+            display: none;
         }
         .item-navbar{
-            animation-name: first-show-item;
-            animation-duration: 3s;
-            animation-iteration-count: 1;
             font-weight: low;
             margin: 0 15px;
         }
         .navbar-sign{
-            animation-name: first-show;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
             .navbar-signup{
                 transition: all 0.5s;
                 margin-left: 10px;
@@ -52,7 +68,7 @@
 @media screen and (max-width:576px) {
     .navbar {
         z-index: 1;
-        height: 44px;
+        height: 48px;
         align-items: center;
         justify-content: center;
         .navbar-container{
@@ -87,8 +103,8 @@
                 height: 48px;
                 .icon-container_mb_1{
                     display: block;
-                    height: 0.8px;
-                    width: 33%;
+                    height: 1px;
+                    width: 50%;
                     background-color: #fff;;
                     margin-bottom: 8px;
                     animation-name: animation-bm_start_1;
@@ -105,8 +121,8 @@
                 }
                 .icon-container_mb_2{
                     display: block;
-                    height: 0.8px;
-                    width: 33%;
+                    height: 1px;
+                    width: 50%;
                     background-color: #fff;
                     animation-name: animation-bm_start_2;
                     animation-duration: 1s;
@@ -128,22 +144,23 @@
     }
 }
 }
+@media screen and (max-width:400px) {
+    .navbar {
+        .navbar-container{
+            i{
+                display: inline-block;
+                order:3
+            }
+            .navbar-sign{
+                display: none;
+
+        }
+
+        }
+    }
+}
 
 
-@keyframes first-show {
-    0%
-    {transform: translateY(-50px);}
-    100%
-    {transform: translateY(0px);}
-}
-@keyframes first-show-item {
-    0%
-    {opacity: 0;}
-    70%
-    {color:white}
-    100%
-    {color:rgb(194, 194, 194)}
-}
 @keyframes animation-bm_1 {
     50%
     {transform:  translateY(4px)}
@@ -168,6 +185,11 @@
     0%
     {transform: translateX(0px) translateY(-4px)  rotate(-45deg);}
 }
-
-
+@keyframes flash{
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+}}
 

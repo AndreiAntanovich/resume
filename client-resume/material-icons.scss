@@ -1,0 +1,23 @@
+//all
+
+//all
+
+//size
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+//size
+
+
+//color
+.material-icons.md-no_active { 
+    color:rgb(194, 194, 194) ;
+    &:hover{
+        color:white;
+        cursor: pointer;
+    }
+    
+}
+.material-icons.md-active { color:white }
+//color
