@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { itemsNavBar } from '../../Types/typesNavBar';
 import MenuBurger from './MenuBurger/MenuBurger'
 import { CSSTransition } from 'react-transition-group'
-import { typingTextAnimation } from '../HomePage/WelcomPageServiceStyle';
+import { typingTextAnimation } from '../../UX-UI-workers/typingTextAnimation';
 
 const NavBar: React.FC = () => {
     const count = useAppSelector((state) => state.counter.value)
@@ -21,7 +21,11 @@ const NavBar: React.FC = () => {
         { nameRu: 'CV', nameEng: 'CV', to: '/CV' },
     ]
 
-    // typingTextAnimation('navbar-name-text',50, 200)
+    const NBText:String[] = [
+        'Andrei Antanovich'
+    ]
+
+    typingTextAnimation(NBText,'navbar-name',100, 5000, 30, false)
     function turnActiveClass() {
         setActiveClass(!activeClass)
     }
@@ -29,12 +33,6 @@ const NavBar: React.FC = () => {
         <div className={`navbar${activeClass ? " active" : ""}`}>
             <div className={`navbar-container${activeClass ? " active" : ""}`}>
                 <div className='navbar-name'>
-                    <p className="navbar-name-text">
-                        Andrei
-                    </p>
-                    <p className="navbar-name-text">
-                        Antanovich
-                    </p>
                 </div>
                 <div onClick={() => turnActiveClass()} className='icon-container_mb'>
                     <span className={`icon-container_mb_1${activeClass ? " active" : ""}`}></span>

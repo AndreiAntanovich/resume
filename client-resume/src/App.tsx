@@ -3,7 +3,7 @@ import './App.css';
 import Skills from './Components/Skills/Skills';
 import NavBar from './Components/NavBar/NavBar';
 import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
-import WelcomePage from './Components/HomePage/WelcomePage';
+import WelcomePage from './Components/WelcomPage/WelcomePage';
 
 
 const App: React.FunctionComponent = () => {

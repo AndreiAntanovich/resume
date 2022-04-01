@@ -26,17 +26,27 @@
         align-items: center;
         justify-content: space-between;
             .navbar-name{
-                width: 70px;
+                width: 45px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                .navbar-name-text{
-                    margin: 0;
-                    visibility: var(--show-text);
-                    text-align: left;
-                    display: inline;
-                    color:white;    
+                .welcome-page-item_text{
+                    display: none;
                 }
+                .text{
+                    color: #fff;
+                    display: inline;
+                    // display:var(--show-text);
+                    font-size: var(--typingText-size);
+                }
+                .cursor{
+                    display: inline;
+                    font-size: var(--typingText-size);
+                    &::after{
+                        color:white;
+                        @include animation-cursor-pounter_text();
+                }}
+    
         }
         i{
             display: none;
