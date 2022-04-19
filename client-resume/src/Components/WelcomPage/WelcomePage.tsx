@@ -12,7 +12,7 @@ const WelcomePage: React.FunctionComponent = () => {
 
 
 
-  typingTextAnimation(arrWelcomText, 'welcome-page-text-typing',500, 500, 1500, 50, 25, true, dispatch )
+  typingTextAnimation(arrWelcomText, 'welcome-page-text-typing',500, 500, 1000, 50, 25, true, dispatch )
 
   return (
     <div className='welcome-page'>

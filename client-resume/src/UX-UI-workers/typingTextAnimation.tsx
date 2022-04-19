@@ -30,7 +30,7 @@ function typingTextAnimation(arrWelcomText: string[], mainElement: string, start
             } else {
               itemCursorElement?.remove()
             }
-          },startDelay+delayDelete+charText.length*typingSpeed + charText.length * deleteSpeed)
+          },startDelay+delayDelete+endDelay+charText.length*typingSpeed + charText.length * deleteSpeed)
 
           index++
           if (index <= charText.length - 1) {
@@ -65,7 +65,7 @@ function typingTextAnimation(arrWelcomText: string[], mainElement: string, start
     let delay = 0
     const delayOfElements = () => {
       typingOneTextElement(arrWelcomText[i], i)
-      delay = arrWelcomText[i].length * typingSpeed + arrWelcomText[i].length * deleteSpeed+startDelay+endDelay+delayDelete
+      delay = arrWelcomText[i].length * typingSpeed + arrWelcomText[i].length * deleteSpeed+2*startDelay+endDelay+delayDelete
 
       i++
       if (i <= arrWelcomText.length - 1) {
