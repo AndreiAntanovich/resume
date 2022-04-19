@@ -18,14 +18,14 @@ const NavBar: React.FC = () => {
         { nameRu: 'Навыки', nameEng: 'Skills', to: '/skills' },
         { nameRu: 'Опыт работы', nameEng: 'Expiriens', to: '/expirians' },
         { nameRu: 'Обо мне', nameEng: 'About me', to: '/about-me' },
-        { nameRu: 'CV', nameEng: 'CV', to: '/CV' },
+        { nameRu: 'О сайте', nameEng: 'About the site', to: '/aboutsite' },
     ]
 
-    const NBText:String[] = [
+    const NBText:string[] = [
         'Andrei Antanovich'
     ]
 
-    typingTextAnimation(NBText,'navbar-name',100, 5000, 30, false)
+    typingTextAnimation(NBText,'navbar-name',50, 5000, 0, 20, 0, false)
     function turnActiveClass() {
         setActiveClass(!activeClass)
     }

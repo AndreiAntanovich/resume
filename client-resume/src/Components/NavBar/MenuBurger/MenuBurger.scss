@@ -7,7 +7,6 @@
     width: 100%;
     background-color: black;
     position: fixed;
-    // top:-100%;
     left:0px;
 
     .item-navbar_mb{
@@ -18,21 +17,5 @@
     }
     }
 
-    .show_items_mb-enter{
-        top:-100%;
-    }
-    .show_items_mb-enter-active{
-        top:44px;
-        transition: top 1000ms;
-    }
-    .show_items_mb-enter-done{
-        top:44px;
-    }
-    .show_items_mb-exit{
-        top:44px;
-    }
-    .show_items_mb-exit-active{
-        top:-100%;
-        transition: top 1000ms;
-    }
+
     

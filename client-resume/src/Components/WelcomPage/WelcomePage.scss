@@ -7,25 +7,30 @@
 
 .welcome-page{
     //variables
-    --typingText-size:80px;
+    --typingText-size:60px;
     --show-text:none;
     --show-end-cursor-animation:flash 0.3s none infinite alternate;
     //variables
     display: flex;
     align-items: center;
     justify-content: center;
-    .welcome-page_container{
-        height: calc(100vh-44px);
+    .welcome-page-container{
+        padding: 0 20px;
+        height: calc(100vh - 44px);
         width: 996px;
         display: flex;
-        .welcome-page-text{
-            position: absolute;
-            top:40%;
-            left:20%;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        .welcome-page-text-typing{
+            transform: translateY(-50%);
+            &_0,&_1,&_2{
+                text-align: center;
+            }
             .text{
-                font-style: 100%;
+                font-weight: 200;
                 display: inline;
-                // display:var(--show-text);
+                text-align: center;
                 font-size: var(--typingText-size);
             }
             .cursor{
@@ -34,6 +39,23 @@
                 &::after{
                     @include animation-cursor-pounter_text();
             }}
+        }
+        .welcome-page-static-container{
+            display: flex;
+            flex-direction: row;
+            .welcome-page-photo-container{
+                flex-basis: 60%;
+                .welcome-page-photo {
+                    border-radius: 50%;
+                    max-width: 100%;
+                }
+            }
+            .welcome-page-text-container{
+                flex-basis:40%;
+                .welcome-page-text{
+                    font-size: 32px;
+                }
+            }
         }
     }
 }
@@ -46,4 +68,18 @@
       opacity: 0;
 }}
 
+.welcome-page-static-container-enter{
+    transform: scale(0);
 
+}
+.welcome-page-static-container-enter-active{
+    transform: scale(1);
+    transition: all 2000ms;
+}
+.welcome-page-static-container-exit{
+    transform: scale(1);
+}
+.welcome-page-static-container-exit-active{
+    transform: scale(0);
+    transition: all  2000ms;
+}
