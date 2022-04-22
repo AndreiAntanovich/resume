@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
     ]
 
     const NBText:string[] = [
-        'Andrei Antanovich'
+        'Andrey Antanovich'
     ]
 
     typingTextAnimation(NBText,'navbar-name',50, 5000, 0, 20, 0, false)
@@ -38,11 +38,6 @@ const NavBar: React.FC = () => {
                     <span className={`icon-container_mb_1${activeClass ? " active" : ""}`}></span>
                     <span className={`icon-container_mb_2${activeClass ? " active" : ""}`}></span>
                 </div>
-                <CSSTransition
-                    in={activeClass} unmountOnExit timeout={{ enter: 1000, exit: 1000 }} classNames="show_items_mb"
-                >
-                    <MenuBurger arrItems={itemsNavBar} activeClass={activeClass} />
-                </CSSTransition>
                 <div className='item-navbar-container'>
                     {itemsNavBar.map(item => {
                         return (
@@ -62,6 +57,12 @@ const NavBar: React.FC = () => {
                     </NavLink>
                 </div>
             </div>
+            <CSSTransition
+                    in={activeClass} unmountOnExit timeout={{ enter: 500, exit: 500 }} classNames="show_items_mb"
+                >
+                    <MenuBurger arrItems={itemsNavBar} activeClass={activeClass} />
+                </CSSTransition>
+
 
         </div>
     );

@@ -2,8 +2,8 @@ import { changeStatusTyping } from "../redux/welcomPage/welcomPageSlice"
 //typingTextEffect
 function typingTextAnimation(arrWelcomText: string[], mainElement: string, startDelay: number, endDelay: number, delayDelete:number, typingSpeed: number, deleteSpeed:number, removePrevItem: boolean, dispatch?: Function) {
   document.addEventListener('DOMContentLoaded', function async() {
-
     const inElement = document.querySelector(`.${mainElement}`)
+    console.log(inElement)
 
     const typingOneTextElement = (itemText: string, i: number) => {
       let itemElement = document.createElement('div')
@@ -23,6 +23,8 @@ function typingTextAnimation(arrWelcomText: string[], mainElement: string, start
           newText = newText + charText[index]
           itemTextElement!.textContent = newText
           const prevElementDelete = document.querySelector(`.${mainElement}_${i}`)
+          const delayStandart = delayDelete+charText.length*typingSpeed + charText.length * deleteSpeed
+          const delayEnd = startDelay+delayDelete+charText.length*typingSpeed + charText.length * deleteSpeed + endDelay
 
           setTimeout(() => {
             if (removePrevItem) {
@@ -30,7 +32,7 @@ function typingTextAnimation(arrWelcomText: string[], mainElement: string, start
             } else {
               itemCursorElement?.remove()
             }
-          },startDelay+delayDelete+endDelay+charText.length*typingSpeed + charText.length * deleteSpeed)
+          },i===arrWelcomText.length-1?delayEnd:delayStandart)
 
           index++
           if (index <= charText.length - 1) {
@@ -58,14 +60,18 @@ function typingTextAnimation(arrWelcomText: string[], mainElement: string, start
         typingOfChar()
       }
 
-      setTimeout(typingText, startDelay)
+      setTimeout(typingText, i===0?startDelay*3:startDelay)
     }
 
     let i = 0;
     let delay = 0
     const delayOfElements = () => {
       typingOneTextElement(arrWelcomText[i], i)
-      delay = arrWelcomText[i].length * typingSpeed + arrWelcomText[i].length * deleteSpeed+2*startDelay+endDelay+delayDelete
+      if (i===0){
+        delay = arrWelcomText[i].length * typingSpeed + arrWelcomText[i].length * deleteSpeed+3*startDelay+delayDelete
+      } else{
+        delay = arrWelcomText[i].length * typingSpeed + arrWelcomText[i].length * deleteSpeed+startDelay+delayDelete
+      }
 
       i++
       if (i <= arrWelcomText.length - 1) {
